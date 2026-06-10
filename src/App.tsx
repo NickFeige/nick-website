@@ -3,10 +3,15 @@ import "./App.css";
 
 export default function HomePage() {
   return (
-    <div className="container">
+    <aside className="sidebar">
+
+    
+    <div className="title">
       <h1>Nick Feige</h1>
       <h2>full stack developer</h2>
      
     </div>
+    </aside>
+    
   );
 }
