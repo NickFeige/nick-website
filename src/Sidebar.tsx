@@ -31,9 +31,13 @@ export default function Sidebar({ active, setActive, darkMode, setDarkMode }: Si
     <aside className={`sidebar ${darkMode ? 'sidebar--dark' : 'sidebar--light'}`}>
 
       <div className="sidebar-profile">
-        <div className="sidebar-profile">
+        
+        
+    
         <h1 className="sidebar-name">Nick Feige</h1>
+        <p className='sidebar-avatar'></p>
         <p className="sidebar-title">Junior full-stack developer</p>
+
       </div>
 
       <nav className="sidebar-nav">

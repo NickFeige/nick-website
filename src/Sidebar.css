@@ -44,11 +44,10 @@ body.dark  { background-color: var(--dark-bg); }
   text-align: center;
 }
 .sidebar-avatar {
-  width: 80px;
-  height: 80px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  background-color: #334155;
-  border: 3px solid #10b981;
+  background-color: var(--cream);
   display: flex;
   align-items: center;
   justify-content: center;
