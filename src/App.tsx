@@ -16,8 +16,11 @@ const navItems: NavItem[] = [
 
 export default function HomePage() {
   const [active, setActive] = useState('About Me');
+   const [darkMode, setDarkMode] = useState(true);
+
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${darkMode ? "sidebar--dark" : "sidebar--light"}`}>
+
 
     
     <div>
@@ -38,6 +41,20 @@ export default function HomePage() {
         ))}
 
     </nav>
+    <div className="sidebar-darkmode">
+        <span className="sidebar-darkmode-label">
+          {darkMode ? ' Dark Mode' : ' Light Mode'}
+        </span>
+        <label className="sidebar-toggle">
+          <input
+            type="checkbox"
+            checked={darkMode}
+            onChange={() => setDarkMode(!darkMode)}
+          />
+          <span className="sidebar-toggle-slider" />
+        </label>
+      </div>
+
     </aside>
     
   );
