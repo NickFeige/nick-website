@@ -3,18 +3,12 @@
   --light-blue:#87CEEB;
   --steel-blue:#4682B4;
   --cream:#f5ede0;
+  --dodger-blue: #1E90FF;
  
 }
 
 body{
   background-color: var(--light-blue);
-}
-title{
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-  flex-shrink: 0;
-
 }
 .sidebar{
   
@@ -49,20 +43,28 @@ title{
   gap: 4px;
 
 }
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.15s, color 0.15s;
+}
 .sidebar-link:hover {
-  background-color: #334155;
-  color: #f1f5f9;
+  background-color:var(--cream);
+  color:var(--light-blue);
 }
-.sidebar-icon {
-  font-size: 16px;
-  width: 20px;
-  text-align: center;
-}
+
 .sidebar-link--active {
-  background-color: #10b981;
-  color: #ffffff;
+  background-color: var(--light-blue);
+  color: var(--cream);
 }
 .sidebar-link:hover {
-  background-color: #334155;
-  color: #f1f5f9;
+  background-color: var(--cream);
+  color: var(--dodger-blue);
 }

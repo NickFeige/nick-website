@@ -3,16 +3,14 @@ import { useState } from 'react';
 import "./App.css";
 interface NavItem {
   label: string;
-  icon: string;
-  href: string;
+  
 }
 const navItems: NavItem[] = [
-  { label: 'About Me',  icon: '👤', href: '#about'     },
-  { label: 'Portfolio', icon: '💼', href: '#portfolio'  },
-  { label: 'Services',  icon: '🛠️', href: '#services'   },
-  { label: 'Resume',    icon: '📄', href: '#resume'     },
-  { label: 'Blog',      icon: '✍️', href: '#blog'       },
-  { label: 'Contact',   icon: '✉️', href: '#contact'    },
+  { label: 'About Me'},
+  { label: 'Portfolio'},
+  { label: 'Services'},
+  { label: 'Resume'},
+  { label: 'Contact'},
 ];
 
 
@@ -22,7 +20,7 @@ export default function HomePage() {
     <aside className="sidebar">
 
     
-    <div className="title">
+    <div>
       <h1  className="sidebar-name">Nick Feige</h1>
       <p className="sidebar-title">Junior full-stack developer </p>
     </div>
@@ -30,11 +28,11 @@ export default function HomePage() {
       {navItems.map((item) => (
        <a
             key={item.label}
-            href={item.href}
-            className={`sidebar-link ${active === item.label ? 'sidebar__link--active' : ''}`}
+            
+            className={`sidebar-link ${active === item.label ? 'sidebar-link--active' : ''}`}
             onClick={() => setActive(item.label)}
           >
-            <span className="sidebar__icon">{item.icon}</span>
+            
             {item.label}
           </a>
         ))}
