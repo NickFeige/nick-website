@@ -26,9 +26,148 @@ body {
   transition: color 0.3s;
 }
  
-.app--dark  .main { color: #94a3b8; }
-.app--light .main { color: #475569; }
+/* ── About Me ── */
+.about {
+  max-width: 640px;
+}
  
-.app--dark  .main h1 { color: #f1f5f9; }
-.app--light .main h1 { color: #1e293b; }
+.about-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
  
+.about-bio {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+ 
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+ 
+.tag {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+ 
+.app--dark .about-title  { color: #f1f5f9; }
+.app--dark .about-bio    { color: #94a3b8; }
+.app--dark .tag          { background-color: #1e293b; color: #7dd3fc; border: 1px solid #334155; }
+ 
+.app--light .about-title { color: #1e293b; }
+.app--light .about-bio   { color: #475569; }
+.app--light .tag         { background-color: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+ 
+.placeholder p { color: #94a3b8; font-size: 15px; }
+
+
+/* ── Resume ── */
+.resume {
+  max-width: 720px;
+}
+ 
+.resume-contact {
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+ 
+.resume-contact a {
+  text-decoration: none;
+}
+ 
+.app--dark  .resume-contact      { color: #94a3b8; }
+.app--dark  .resume-contact a    { color: #7dd3fc; }
+.app--light .resume-contact      { color: #475569; }
+.app--light .resume-contact a    { color: #0369a1; }
+ 
+.resume-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 6px;
+  margin: 28px 0 12px;
+  border-bottom: 1px solid;
+}
+ 
+.app--dark  .resume-section-title { color: #7dd3fc; border-color: #334155; }
+.app--light .resume-section-title { color: #0369a1; border-color: #bae6fd; }
+ 
+.resume-item {
+  margin-bottom: 18px;
+}
+ 
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+ 
+.resume-company {
+  font-size: 15px;
+  font-weight: 600;
+}
+ 
+.resume-date {
+  font-size: 12px;
+}
+ 
+.resume-role {
+  font-size: 13px;
+  margin: 2px 0 6px;
+  font-style: italic;
+}
+ 
+.app--dark  .resume-company { color: #f1f5f9; }
+.app--dark  .resume-date    { color: #64748b; }
+.app--dark  .resume-role    { color: #94a3b8; }
+.app--light .resume-company { color: #1e293b; }
+.app--light .resume-date    { color: #64748b; }
+.app--light .resume-role    { color: #475569; }
+ 
+.resume-bullets {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+ 
+.resume-bullets li {
+  font-size: 13px;
+  line-height: 1.6;
+}
+ 
+.app--dark  .resume-bullets li { color: #94a3b8; }
+.app--light .resume-bullets li { color: #475569; }
+ 
+/* Skills table */
+.resume-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+ 
+.resume-skill-row {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+}
+ 
+.resume-skill-label {
+  width: 90px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+ 
+.app--dark  .resume-skill-label { color: #f1f5f9; }
+.app--dark  .resume-skill-value { color: #94a3b8; }
+.app--light .resume-skill-label { color: #1e293b; }
+.app--light .resume-skill-value { color: #475569; }

@@ -177,7 +177,48 @@ body.dark  { background-color: var(--dark-bg); }
   border-radius: 50%;
   transition: transform 0.2s;
 }
+/* ── Social icons ── */
+.sidebar-socials {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
  
+.sidebar-social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s, transform 0.15s;
+}
+ 
+.sidebar-social-btn:hover {
+  transform: translateY(-2px);
+}
+ 
+.sidebar--dark .sidebar-social-btn {
+  background-color: #334155;
+  color: #94a3b8;
+}
+ 
+.sidebar--dark .sidebar-social-btn:hover {
+  background-color: #4682B4;
+  color: #ffffff;
+}
+ 
+.sidebar--light .sidebar-social-btn {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+ 
+.sidebar--light .sidebar-social-btn:hover {
+  background-color: #4682B4;
+  color: #ffffff;
+}
 .sidebar-toggle input:checked + .sidebar-toggle-slider {
   background-color: #10b981;
 }
