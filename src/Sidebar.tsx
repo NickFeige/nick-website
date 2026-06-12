@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import "./Sidebar.css";
 
@@ -70,64 +70,100 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ active, setActive, darkMode, setDarkMode }: SidebarProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     document.body.className = darkMode ? 'dark' : 'light';
   }, [darkMode]);
 
+  // Close sidebar when a nav item is clicked on mobile
+  const handleNavClick = (label: string) => {
+    setActive(label);
+    setMobileOpen(false);
+  };
+
   return (
-    <aside className={`sidebar ${darkMode ? 'sidebar--dark' : 'sidebar--light'}`}>
+    <>
+      {/* ── Hamburger button (mobile only) ── */}
+      <button
+        className={`sidebar-hamburger ${darkMode ? 'sidebar-hamburger--dark' : 'sidebar-hamburger--light'}`}
+        onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label="Toggle menu"
+      >
+        {mobileOpen ? (
+          // X icon
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="22" height="22">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        ) : (
+          // Hamburger icon
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="22" height="22">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        )}
+      </button>
 
-      <div className="sidebar-profile">
-        <h1 className="sidebar-name">Nick Feige</h1>
-        <p className='sidebar-avatar'></p>
-        <p className="sidebar-title">Hi my name is Nick Feige and I'm a
-          Junior full-stack developer. Welcome to my personal website!</p>
+      {/* ── Overlay (mobile only) ── */}
+      {mobileOpen && (
+        <div className="sidebar-overlay" onClick={() => setMobileOpen(false)} />
+      )}
 
-        {/* Social icons */}
-        <div className="sidebar-socials">
-          {socials.map((s) => (
+      {/* ── Sidebar ── */}
+      <aside className={`sidebar ${darkMode ? 'sidebar--dark' : 'sidebar--light'} ${mobileOpen ? 'sidebar--open' : ''}`}>
+
+        <div className="sidebar-profile">
+          <img src="/nick.jpg" alt="Nick Feige" className="sidebar-avatar" />
+          <h1 className="sidebar-name">Nick Feige</h1>
+          <p className="sidebar-title">Hi my name is Nick Feige and I'm a
+            Junior full-stack developer. Welcome to my personal website!</p>
+
+          <div className="sidebar-socials">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target={s.href.startsWith('http') ? '_blank' : undefined}
+                rel="noreferrer"
+                className="sidebar-social-btn"
+                aria-label={s.label}
+                title={s.label}
+              >
+                {s.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <nav className="sidebar-nav">
+          {navItems.map((item) => (
             <a
-              key={s.label}
-              href={s.href}
-              target={s.href.startsWith('http') ? '_blank' : undefined}
-              rel="noreferrer"
-              className="sidebar-social-btn"
-              aria-label={s.label}
-              title={s.label}
+              key={item.label}
+              className={`sidebar-link ${active === item.label ? 'sidebar-link--active' : ''}`}
+              onClick={() => handleNavClick(item.label)}
             >
-              {s.icon}
+              {item.label}
             </a>
           ))}
+        </nav>
+
+        <div className="sidebar-darkmode">
+          <span className="sidebar-darkmode-label">
+            {darkMode ? 'Dark Mode' : 'Light Mode'}
+          </span>
+          <label className="sidebar-toggle">
+            <input
+              type="checkbox"
+              checked={darkMode}
+              onChange={() => setDarkMode(!darkMode)}
+            />
+            <span className="sidebar-toggle-slider" />
+          </label>
         </div>
-      </div>
 
-      <nav className="sidebar-nav">
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            className={`sidebar-link ${active === item.label ? 'sidebar-link--active' : ''}`}
-            onClick={() => setActive(item.label)}
-          >
-            {item.label}
-          </a>
-        ))}
-      </nav>
-
-      <div className="sidebar-darkmode">
-        <span className="sidebar-darkmode-label">
-          {darkMode ? 'Dark Mode' : 'Light Mode'}
-        </span>
-        <label className="sidebar-toggle">
-          <input
-            type="checkbox"
-            checked={darkMode}
-            onChange={() => setDarkMode(!darkMode)}
-          />
-          <span className="sidebar-toggle-slider" />
-        </label>
-      </div>
-
-    </aside>
+      </aside>
+    </>
   );
 }
