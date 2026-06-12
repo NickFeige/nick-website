@@ -4,7 +4,7 @@ import './App.css';
 
 export default function App() {
   const [active, setActive] = useState('About Me');
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <div className={`app ${darkMode ? 'app--dark' : 'app--light'}`}>
