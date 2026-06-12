@@ -239,7 +239,7 @@ body {
   border-radius: 4px;
   font-size: 12px;
   font-weight: 600;
-  background-color: #1d4ed8;
+  background-color:var(--light-blue);
   color: #ffffff;
 }
 

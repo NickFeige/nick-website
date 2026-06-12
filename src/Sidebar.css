@@ -46,11 +46,11 @@ body.dark  { background-color: var(--dark-bg); }
 }
 
 .sidebar-avatar {
-  width: 120px;
-  height: 120px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--steel-blue);
+  border: 2px solid var(--steel-blue);
   margin-bottom: 4px;
 }
 
@@ -60,14 +60,14 @@ body.dark  { background-color: var(--dark-bg); }
 /* ── Name & title ── */
 .sidebar-name {
   color: var(--cream);
-  font-size: 24px;
+  font-size: 40px;
   font-weight: 600;
   margin: 0;
 }
  
 .sidebar-title {
   color: var(--cream);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   margin: 0;
   line-height: 1.5;
@@ -234,7 +234,7 @@ body.dark  { background-color: var(--dark-bg); }
   transform: translateX(20px);
 }
 
-/* ── Hamburger button (hidden on desktop) ── */
+/* Hamburger button (hidden on desktop) */
 .sidebar-hamburger {
   display: none;
   position: fixed;

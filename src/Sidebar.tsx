@@ -43,15 +43,6 @@ const socials = [
     ),
   },
   {
-    label: 'Phone',
-    href: 'tel:0852196601',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
-      </svg>
-    ),
-  },
-  {
     label: 'Resume',
     href: '#',
     icon: (
@@ -115,10 +106,10 @@ export default function Sidebar({ active, setActive, darkMode, setDarkMode }: Si
       <aside className={`sidebar ${darkMode ? 'sidebar--dark' : 'sidebar--light'} ${mobileOpen ? 'sidebar--open' : ''}`}>
 
         <div className="sidebar-profile">
-          <img src="/nick.jpg" alt="Nick Feige" className="sidebar-avatar" />
           <h1 className="sidebar-name">Nick Feige</h1>
-          <p className="sidebar-title">Hi my name is Nick Feige and I'm a
-            Junior full-stack developer. Welcome to my personal website!</p>
+          <img src="/nick.jpg" alt="Nick Feige" className="sidebar-avatar" />
+          
+          
 
           <div className="sidebar-socials">
             {socials.map((s) => (

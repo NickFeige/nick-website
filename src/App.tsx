@@ -17,7 +17,7 @@ const projects: Project[] = [
     title: 'Coffee at Dawn',
     desc: "Built a full café website from scratch — the business's very first online presence. Responsive across mobile and desktop.",
     detail: "This was a freelance project for a local Galway café. I handled everything from design to deployment — building the site in React Native so it works seamlessly on both mobile and desktop. I worked closely with the owner to match their brand, set up a menu showcase, contact form, and Google Maps integration.",
-    tags: ['React Native', 'TypeScript'],
+    tags: ['React', 'TypeScript', 'css'],
     repo: 'https://github.com/NickFeige/coffee-atdawns',
   },
   {
@@ -33,7 +33,7 @@ const projects: Project[] = [
     title: 'Travel Assistant App',
     desc: 'Full-stack travel app with real-time location services. Led a team of developers using Agile & Scrum as Group Lead.',
     detail: "My final year project at ATU Galway. I led a team of developers through the full project lifecycle — running stand-ups, sprint planning and retros. The frontend was built in React Native and connected to a Python/Flask REST API with real-time location and mapping integrations.",
-    tags: ['React Native', 'Flask', 'Python'],
+    tags: ['React Native','TypeScript', 'Flask', 'Python'],
     repo: 'https://github.com/NickFeige/Professional-PracticeProject',
   },
   {
@@ -48,7 +48,7 @@ const projects: Project[] = [
 
 export default function App() {
   const [active, setActive] = useState('About Me');
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
@@ -77,6 +77,7 @@ export default function App() {
               <span className="tag">Firebase</span>
               <span className="tag">Full Stack</span>
               <span className="tag">React</span>
+               <span className="tag">React-Native</span>
               <span className="tag">TypeScript</span>
               <span className="tag">AI Tools</span>
             </div>
@@ -219,7 +220,7 @@ export default function App() {
           <section className="contact">
             <h1 className="about-title">Contact</h1>
             <p className="contact-intro">
-              Feel free to reach out — whether it's about a job opportunity, a project, or just to say hi!
+              Feel free to reach out via email or connect with me on LinkedIn or GitHub. I'm always open to discussing new projects, opportunities, or collaborations.
             </p>
             <div className="contact-cards">
               <a href="mailto:nfeige7@gmail.com" className="contact-card">
